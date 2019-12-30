@@ -12,7 +12,7 @@ type Props = {
 function User({ user }: Props) {
   console.log("render");
   const dispatch: Dispatch = useDispatch();
-  const { removeUser } = useMemo(() => mapDispatch(dispatch), []);
+  const { removeUser } = useMemo(() => mapDispatch(dispatch), [dispatch]);
   return (
     <div>
       {user.name}
