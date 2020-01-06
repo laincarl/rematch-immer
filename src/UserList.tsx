@@ -22,7 +22,7 @@ function UserList() {
     loading
   } = useSelector(mapState);
   const dispatch: Dispatch = useDispatch();
-  const { load } = useMemo(() => mapDispatch(dispatch), []);
+  const { load } = useMemo(() => mapDispatch(dispatch), [dispatch]);
   useEffect(() => {
     load();
   }, [load]);

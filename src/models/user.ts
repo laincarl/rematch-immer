@@ -1,7 +1,7 @@
 import { createModel } from "@rematch/core";
 import produce from "immer";
 import { findIndex } from "lodash";
-const getNextId = list => (list.length > 0 ? list[list.length - 1].id + 1 : 0);
+const getNextId = (list: User[]) => (list.length > 0 ? list[list.length - 1].id + 1 : 0);
 export type User = {
   id: number;
   name: string;
@@ -9,7 +9,7 @@ export type User = {
 export type UserState = {
   data: User[];
 };
-export default createModel({
+export default createModel<UserState>({
   state: {
     data: []
   },
